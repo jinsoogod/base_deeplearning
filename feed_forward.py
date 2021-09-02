@@ -1,6 +1,6 @@
 import numpy as np
 from actviation_function import sigmoid
-
+from actviation_function import softmax
 '''
 input = x1, x2, bias(3개)
 hidden layer1 = a1, a2, a3 (3개)
@@ -51,6 +51,7 @@ a2 = (x1 * w12) + (x2 * w22) + b2
 A2 = sigmoid(a2)
 a3 = (x1 * w13) + (x2 * w23) + b3
 A3 = sigmoid(a3)
+
 
 # hidden layer2
 '''
@@ -130,5 +131,8 @@ A5w2 = 0.4
 A6w2  = 0.6
 b8 = 0.2
 y2 = (A4*A4w2) + (A5*A5w2) + (A6*A6w2) + b8
+
+softmax_input = np.array([y1, y2])
+output = softmax(softmax_input)
 
 print("End")
